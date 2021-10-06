@@ -1,0 +1,11 @@
+{
+  "db": {
+    "port": 27017,
+    "url": "mongodb+srv://taller_api_rest:1debAHYJ1W8cR28h@cluster0.y7ki0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "database": "cluster0",
+    "password": "1debAHYJ1W8cR28h",
+    "name": "db",
+    "user": "taller_api_rest",
+    "connector": "mongodb"
+  }
+}

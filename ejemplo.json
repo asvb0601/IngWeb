@@ -1,0 +1,10 @@
+{
+    "titulo": "string",
+    "descripcion": "string",
+    "confirmados": 0,
+    "vacantes": 0,
+    "encuentro": "string",
+    "finalizacion": "string",
+    "direccion": "string",
+    "id": "string"
+}

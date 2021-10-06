@@ -1,0 +1,48 @@
+<p>list-events works!</p>
+{{events | json}}
+
+<div class="row mt-5">
+  <div class="col">
+      <button type="button" class="btn btn-success float-right mb-1" data-toggle="modal" 
+      data-target="#modalProduct">+</button>
+      <table class="table table-hover">
+          <thead>
+              <tr>
+                
+                  <th scope="col">#</th>
+                  <th scope="col">TITULO</th>
+                  <th scope="col">DESCRIPCION</th>
+                  <th scope="col">CONFIRMADOS</th>
+                  <th scope="col">VACANTES</th>
+                  <th scope="col">ENCUENTRO</th>
+                  <th scope="col">FINALIZACION</th>
+                  <th scope="col">DIRECCION</th>
+                  
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let event of events; index as i">
+                  <td scope="row">{{i+1}}</td>
+                  <td>{{event.titulo}}</td>
+                  <td>{{event.descripcion}}</td>
+                  <td>{{event.confirmados}}</td>
+                  <td>{{event.vacantes}}</td>
+                  <td>{{event.encuentro}}</td>
+                  <td>{{event.finalizacion}}</td>
+                  <td>{{event.direccion}}</td>
+                  
+                  <td>
+                      <button class="btn btn-primary"(click)="onPreUpdateEvent(event)"
+                      data-toggle="modal" data-target="#modalProduct">Modificar</button>
+                  </td>
+                  <td>
+                      <a href="/admin/list-event" class="btn btn-danger" 
+                      (click)="onDeleteEvent(event.id)">Eliminar</a>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+
+<app-modal></app-modal>
