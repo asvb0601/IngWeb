@@ -14,7 +14,7 @@
             <a class="nav-link" routerLink="/admin/list2">Eventos</a>
           </li>
           
-          <li class="nav-item">
+          <li class="nav-item"*ngIf="!isLogged">
             <a class="nav-link" routerLink="#">Amigos</a>
           </li>
 
@@ -23,10 +23,12 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" routerLink="#">Miembros</a>
+            <a class="nav-link" routerLink="/members">Miembros</a>
           </li>
 
-        
+          <li class="nav-item"*ngIf="isLogged">
+            <a class="nav-link" routerLink="/admin/list-event">Mis eventos</a>
+          </li>
 
           <li class="nav-item"*ngIf="isLogged">
             <a href = 'index.html'class="nav-link"(click)="onLogout()">Logout
@@ -34,6 +36,8 @@
           </li>
         
         </ul>
+
+        
         
       </div>
     </div>

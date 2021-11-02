@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { DataApiService } from './services/data-api.service';
 import { List2Component } from './components/admin/list2/list2.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { MembersComponent } from './components/members/members.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ModalComponent } from './components/modal/modal.component';
     ProfileComponent,
     Page404Component,
     List2Component,
-    ModalComponent
+    ModalComponent,
+    MembersComponent
   ],
   imports: [
     BrowserModule,

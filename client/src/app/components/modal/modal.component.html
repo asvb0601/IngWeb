@@ -8,6 +8,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            
             <div class="modal-body">
                 <form class="form-event" #formProduct="ngForm" (ngSubmit)="onSaveEvent(formProduct)">
                     <input type="text" id="eventId" name="eventId" class="form-control"
@@ -57,39 +58,12 @@
                             [(ngModel)]="this.dataApiService.selectedEvent.direccion" >
                         </div>
 
+                        <div class="form-group col-md-6">
+                            <label for="nombre">Link de imagen</label>
+                            <input type="text" id="link" name="link" class="form-control" placeholder="Link"
+                            [(ngModel)]="this.dataApiService.selectedEvent.link" >
+                        </div>
 
-
-                        <!--
-          <div class="form-group col-md-6">
-            <label for="nombre">Nombre</label>
-            <input type="nombre" id="nombre" name="nombre" class="form-control" placeholder="Nombre"
-            [(ngModel)]="this.dataApiService.selectedProduct.nombre" >
-          </div>
-
-            <div class="form-group col-md-6">
-              <label for="descripcion">Descripcion</label>
-              <textarea name ="descripcion" id="descripcion"  class="form-control" cols="50" rows="4"
-              [(ngModel)]="this.dataApiService.selectedProduct.descripcion" ></textarea >
-            </div>
-        
-              <div class="form-group col-md-6">
-                <label for="precio">Precio</label>
-                <input type="number" id="precio" name="precio" class="form-control" placeholder="Precio"
-                [(ngModel)]="this.dataApiService.selectedProduct.precio">
-              </div>
-
-                <div class="form-group col-md-6">
-                  <label for="imagen">Imagen</label>
-                  <input type="imagen" id="imagen" name="imagen" class="form-control" placeholder="Imagen"
-                  [(ngModel)]="this.dataApiService.selectedProduct.imagen" >
-                </div>
-
-                <div hidden class="form-group col-md-6">
-                  <label for="IdUser">Identificador usuario</label>
-                  <input type="text" id="identifacorusuario" name="identifacorusuario" class="form-control" placeholder="Id user"
-                  [(ngModel)]="identificador" >
-                </div>                
--->
                     </div>
 
                     <button type="submit" class="btn btn-success float-right">Guardar Producto</button>

@@ -6,5 +6,6 @@ export interface EventInterface{
     encuentro?: string;
     finalizacion?: string;
     direccion?: string;
+    link?: string;
     id?: string;
 }

@@ -22,7 +22,8 @@ export class DataApiService {
     vacantes:0,
     encuentro: '',
     finalizacion: '',
-    direccion: ''
+    direccion: '',
+    link: '' 
   };
 
   headers : HttpHeaders =new HttpHeaders({
@@ -43,22 +44,23 @@ export class DataApiService {
   }
 
   saveEvent(evento: EventInterface){
-    let token;
-    const url_api =  `http://localhost:3000/api/enentos/${token}`;
+    let token = this.authService.getToken();
+    const url_api =  `http://localhost:3000/api/enentos`;
     return this.http.post<EventInterface>(url_api, evento,{headers : this.headers})
     .pipe(map(data => data));
   }
 
   updateEvent(evento){
+    const eventId = evento.eventId;
     let token = this.authService.getToken();
-    const url_api =  `http://localhost:3000/api/enentos/${token}`;
+    const url_api =  `http://localhost:3000/api/enentos/${eventId}/?access_token=${token}`;
     return this.http.put<EventInterface>(url_api, this.evento,{headers : this.headers})
     .pipe(map(data => data));
   }
 
   deleteEvent(id: string){
     let token = this.authService.getToken();
-    const url_api =  `http://localhost:3000/api/enentos/${id}`;
+    const url_api =  `http://localhost:3000/api/enentos/${id}/?access_token=${token}`;
     return this.http.delete<EventInterface>(url_api, {headers : this.headers})
     .pipe(map(data => data));
   }

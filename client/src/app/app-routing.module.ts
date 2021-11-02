@@ -8,6 +8,7 @@ import { LoginComponent } from './components/user/login/login.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { List2Component } from './components/admin/list2/list2.component';
+import { MembersComponent } from './components/members/members.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'user/login', component: LoginComponent},
   {path: 'user/register', component: RegisterComponent},
   {path: 'user/profile', component: ProfileComponent}, //auth
+  {path: 'members', component: MembersComponent},
   {path: '**', component: Page404Component}
 ];
 

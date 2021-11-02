@@ -1,5 +1,7 @@
-import { DataApiService } from './../../services/data-api.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { DataApiService } from 'src/app/services/data-api.service';
 import { Component, OnInit } from '@angular/core';
+import { EventInterface } from 'src/app/models/event-interface';
 
 @Component({
   selector: 'app-home',
@@ -8,15 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private dataApi: DataApiService) { 
+  constructor(public dataApiService: DataApiService, public authService: AuthService) { 
 
   }
-
+  public events: EventInterface;
   ngOnInit(): void {
+    this.getListEvents();
   }
 
-  getListEvents(){
-    this.dataApi.getAllEvents().subscribe(events => console.log(events));
+  getListEvents(): void {
+    this.dataApiService.getAllEvents()
+    .subscribe((events:EventInterface)=>(this.events=events));
   }
 
 }
